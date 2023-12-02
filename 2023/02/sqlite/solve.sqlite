@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+tail -n +5 "$0" | sqlite3 "$@"
+exit $?
+# sqlite script starts below this line
+
+.read setup.sql
+.import input.txt input
+.mode columns
+
+.print
+.print Solution 1
+.read solution1.sql
+
+.print
+.print Solution 2
+.read solution2.sql
+.quit
+
